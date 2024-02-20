@@ -147,7 +147,7 @@ body {
   position: fixed;
   height: 100%;
   width: 100%;
-  background: var(--bgColor) url(background.jpg);
+  background: var(--bgColor) url('https://s11.ax1x.com/2024/02/20/pFtethQ.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
