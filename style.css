@@ -1,0 +1,249 @@
+:root {
+  --textColor: white;
+  --textColorRgb: 255,255,255;
+  --bgColor: #3c3c3c;
+  --bgColorRgb: 60,60,60;
+  --blur: 20px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  outline: none;
+}
+html {
+  background: var(--bgColor);
+}
+a {
+  text-decoration-line: none;
+  transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
+  color: rgba(var(--textColorRgb),0.85);
+  outline: none;
+  font-size: calc(0.8rem+5vw);
+}
+a:hover {
+  opacity: 0.5;
+}
+h1 {
+  font-size: calc(1.4rem + 5vw);
+  color: rgba(var(--textColorRgb),0.9);
+}
+h2 {
+  font-size: calc(1.2rem + 5vw);
+  color: rgba(var(--textColorRgb),0.8);
+}
+h3 {
+  font-size: calc(1rem + 5vw);
+  color: rgba(var(--textColorRgb),0.7);
+}
+p {
+  font-size: calc(0.9rem + 5vw);
+  color: rgba(var(--textColorRgb),0.7);
+}
+i {
+  font-size: calc(1rem + 5vw);
+  color: rgba(var(--textColorRgb),0.7);
+}
+header {
+  position: fixed;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
+  z-index: 90;
+}
+#link {
+  z-index: 91;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-shadow: 0px 0px 5px rgba(var(--bgColorRgb),0.7);
+  padding: 0px 1rem;
+}
+#link a,#link i {
+  z-index: 91;
+  color: var(--textColor);
+  font-size: calc(0.3rem + 5vw);
+}
+#link h1{
+  z-index: 91;
+  color: var(--textColor);
+  font-size: calc(0.3rem + 5vw);
+}
+.container {
+  padding: 1rem;
+  height: 100%;
+}
+.pCard p{
+  font-size: calc(0.2rem + 5vw);
+}
+.pCard h2,footer h2{
+  font-size: calc(0.6rem + 5vw);
+}
+@media screen and (min-width: 800px) {
+  a {
+    font-size: calc(0.8rem + 3vw);
+  }
+  h1 {
+    font-size: calc(1.4rem + 3vw);
+  }
+  h2 {
+    font-size: calc(1.2rem + 3vw);
+  }
+  h3 {
+    font-size: calc(1rem + 3vw);
+  }
+  p {
+    font-size: calc(0.8rem + 3vw);
+  }
+  i {
+    font-size: calc(1rem + 3vw);
+  }
+  #link a,#link i {
+    font-size: calc(0.2rem + 3vw);
+  }
+  #link h1{
+    font-size: calc(0.3rem + 3vw);
+  }
+  .container {
+    padding: 2.5rem;
+  }
+  #link {
+    padding: 0 2.5rem;
+  }
+  .pCard p{
+    font-size: calc(0.2rem + 3vw);
+  }
+  .pCard h2,footer h2{
+    font-size: calc(0.6rem + 3vw);
+  }
+}
+hr {
+  width: 100%;
+  border-radius: 5px;
+  border: solid 1px rgba(var(--textColorRgb),0.7);
+  outline: none;
+}
+br {
+  width: 100%;
+}
+#headerBg {
+  position: fixed;
+  z-index: 90;
+  height: 100px;
+  width: 100vw;
+  background: black;
+  top: -70px;
+  filter: blur(50px);
+  opacity: 0.7;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background: rgba(var(---bgColorRgb,0.3));
+}
+#bg {
+  z-index: -3;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: var(--bgColor) url(background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#cover {
+  z-index: -2;
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+}
+#place {
+  height: 10px;
+}
+#welcome {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-start;
+  align-content: center;
+  line-height: 0;
+}
+#welcome h2{
+  width: 100%;
+}
+#aboutMe {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-start;
+  align-content: center;
+}
+#projects,#links {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
+.pCard {
+  height: auto;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 3.5rem);
+  margin-bottom: 0.5rem;
+  padding: 0 2rem;
+  flex-direction: row;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(var(--blur));
+  border-radius: 1.5rem;
+  transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
+}
+.pCard h2{
+  border-right: solid 1px rgba(var(--textColorRgb),0.5);
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
+@media screen and (min-width: 800px) {
+  .pCard {
+    border-radius: 2.5rem;
+    padding: 1rem 2rem;
+  }
+  .pCard h2{
+    border-right: solid 2px rgba(var(--textColorRgb),0.5);
+  }
+}
+.bi-arrow-down-short {
+  animation: arrowDown 1s infinite cubic-bezier(1, 0, 0, 1);
+  width: 100%;
+  position: relative;
+}
+@keyframes arrowDown {
+  0% {
+    bottom: 0rem;
+    color: rgba(var(--textColorRgb),0.9);
+  }
+  50% {
+    bottom: -0.5rem;
+    color: var(--textColor);
+  }
+  100% {
+    bottom: 0rem;
+    color: rgba(var(--textColorRgb),0.9);
+  }
+}
+footer {
+  background: rgba(var(--bgColorRgb),0.7);
+  backdrop-filter: blur(var(--blur));
+  padding: 2rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
