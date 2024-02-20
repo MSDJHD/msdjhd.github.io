@@ -9,6 +9,7 @@
   height: 100%;
   width: 100%;
   outline: none;
+  font-family: Arial;
 }
 html {
   background: var(--bgColor);
