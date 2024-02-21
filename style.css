@@ -9,7 +9,13 @@
   height: 100%;
   width: 100%;
   outline: none;
-  font-family: "Montserrat","Noto Sans SC",Sans-Serif;
+  font-family: "阿里巴巴普惠体 2.0 65 Medium","Arial",Sans-Serif;
+  font-display: swap;
+}
+@font-face {
+  font-family: "阿里巴巴普惠体 2.0 65 Medium";font-weight: 500;src: url("https://at.alicdn.com/wf/webfont/CYuoliNh4YEO/gCMAsCNZ0YUk.woff2") format("woff2"),
+  url("https://at.alicdn.com/wf/webfont/CYuoliNh4YEO/IvFtvHg49ibM.woff") format("woff");
+  font-display: swap;
 }
 html {
   background: var(--bgColor);
