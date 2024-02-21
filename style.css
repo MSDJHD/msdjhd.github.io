@@ -3,13 +3,13 @@
   --textColorRgb: 255,255,255;
   --bgColor: #3c3c3c;
   --bgColorRgb: 60,60,60;
-  --blur: 20px;
+  --blur: calc(5px + 1vw);
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   box-sizing: border-box;
   height: 100%;
   width: 100%;
   outline: none;
-  font-family: Arial;
+  font-family: "Montserrat","Noto Sans SC",Sans-Serif;
 }
 html {
   background: var(--bgColor);
@@ -20,24 +20,33 @@ a {
   color: rgba(var(--textColorRgb),0.85);
   outline: none;
   font-size: calc(0.8rem+5vw);
+  font-weight: 400;
+  position: relative;
+  bottom: 0;
 }
 a:hover {
-  opacity: 0.5;
+  color: rgba(var(--textColorRgb),0.5);
+  bottom: 0.3rem;
+  filter: drop-shadow(0px 0px rgba(255,255,255,0.5));
 }
 h1 {
   font-size: calc(1.4rem + 5vw);
+  font-weight: 900;
   color: rgba(var(--textColorRgb),0.9);
 }
 h2 {
   font-size: calc(1.2rem + 5vw);
+  font-weight: 700;
   color: rgba(var(--textColorRgb),0.8);
 }
 h3 {
   font-size: calc(1rem + 5vw);
+  font-weight: 600;
   color: rgba(var(--textColorRgb),0.7);
 }
 p {
   font-size: calc(0.9rem + 5vw);
+  font-weight: 500;
   color: rgba(var(--textColorRgb),0.7);
 }
 i {
@@ -63,8 +72,8 @@ header {
 }
 #link a,#link i {
   z-index: 91;
-  color: var(--textColor);
-  font-size: calc(0.3rem + 5vw);
+  color: rgba(var(--textColorRgb),0.9);
+  font-size: calc(0.2rem + 5vw);
 }
 #link h1{
   z-index: 91;
@@ -81,43 +90,11 @@ header {
 .pCard h2,footer h2{
   font-size: calc(0.6rem + 5vw);
 }
-@media screen and (min-width: 800px) {
-  a {
-    font-size: calc(0.8rem + 3vw);
-  }
-  h1 {
-    font-size: calc(1.4rem + 3vw);
-  }
-  h2 {
-    font-size: calc(1.2rem + 3vw);
-  }
-  h3 {
-    font-size: calc(1rem + 3vw);
-  }
-  p {
-    font-size: calc(0.8rem + 3vw);
-  }
-  i {
-    font-size: calc(1rem + 3vw);
-  }
-  #link a,#link i {
-    font-size: calc(0.2rem + 3vw);
-  }
-  #link h1{
-    font-size: calc(0.3rem + 3vw);
-  }
-  .container {
-    padding: 2.5rem;
-  }
-  #link {
-    padding: 0 2.5rem;
-  }
-  .pCard p{
-    font-size: calc(0.2rem + 3vw);
-  }
-  .pCard h2,footer h2{
-    font-size: calc(0.6rem + 3vw);
-  }
+img {
+  height: 100%;
+  width: 35vw;
+  image-rendering: auto;
+  object-fit: cover;
 }
 hr {
   width: 100%;
@@ -194,51 +171,71 @@ body {
   justify-content: space-between;
   align-content: center;
 }
+#links a,#projects a{
+  width: 100%;
+  border-radius: 1.5rem;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(var(--blur));
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
 .pCard {
+  position: block;
   height: auto;
   overflow: scroll;
   display: flex;
-  align-items: center;
-  width: calc(100% - 3.5rem);
-  margin-bottom: 0.5rem;
-  padding: 0 2rem;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 0;
+  width: 100%;
   flex-direction: row;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(var(--blur));
   border-radius: 1.5rem;
   transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
 }
-.pCard h2{
+.cardLeft{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-right: solid 1px rgba(var(--textColorRgb),0.5);
-  padding-right: 1rem;
-  margin-right: 1rem;
+  height: auto;
+  width: 30vw;
+  padding: 0.3rem 0.5rem;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(var(--blur));
 }
-@media screen and (min-width: 800px) {
-  .pCard {
-    border-radius: 2.5rem;
-    padding: 1rem 2rem;
-  }
-  .pCard h2{
-    border-right: solid 2px rgba(var(--textColorRgb),0.5);
-  }
+.cardRight{
+  content: center;
+  width: 70%;
+  height: auto;
+  padding: 0;
+  padding: 0.3rem 0.5rem;
+}
+.cardLeftL {
+  width: 35vw;
+  height: auto;
+  display: flex;
+  align-items: center;
 }
 .bi-arrow-down-short {
   animation: arrowDown 1s infinite cubic-bezier(1, 0, 0, 1);
   width: 100%;
   position: relative;
+  color: rgba(var(--textColorRgb),0.5);
 }
 @keyframes arrowDown {
   0% {
     bottom: 0rem;
-    color: rgba(var(--textColorRgb),0.9);
+    color: rgba(var(--textColorRgb),0.5);
   }
   50% {
     bottom: -0.5rem;
     color: var(--textColor);
+    text-shadow: 0px 0px 10px white;
   }
   100% {
     bottom: 0rem;
-    color: rgba(var(--textColorRgb),0.9);
+    color: rgba(var(--textColorRgb),0.5);
   }
 }
 footer {
@@ -247,4 +244,63 @@ footer {
   padding: 2rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
+}
+@media screen and (min-width: 600px) {
+  a {
+    font-size: calc(0.8rem + 3vw);
+  }
+  h1 {
+    font-size: calc(1.4rem + 3vw);
+  }
+  h2 {
+    font-size: calc(1.2rem + 3vw);
+  }
+  h3 {
+    font-size: calc(1rem + 3vw);
+  }
+  p {
+    font-size: calc(0.8rem + 3vw);
+  }
+  i {
+    font-size: calc(1rem + 3vw);
+  }
+  #link a,#link i {
+    font-size: calc(0.1rem + 3vw);
+  }
+  #link h1{
+    font-size: calc(0.3rem + 3vw);
+  }
+  .container {
+    padding: 2.5rem;
+  }
+  #link {
+    padding: 0 2.5rem;
+  }
+  .pCard p{
+    font-size: calc(0.2rem + 3vw);
+  }
+  .pCard h2,footer h2{
+    font-size: calc(0.6rem + 3vw);
+  }
+  img {
+    height: auto;
+    width: 20vw;
+  }
+  .cardLeftL {
+    width: 20vw;
+  }
+  .pCard {
+    border-radius: 2.5rem;
+  }
+  #links a,#projects a{
+    border-radius: 2.5rem;
+  }
+  .cardLeft {
+    border-right: solid 2px rgba(var(--textColorRgb),0.5);
+    padding: 1rem 2rem;
+    width: 25vw;
+  }
+  .cardRight {
+    padding: 1rem 2rem;
+  }
 }
