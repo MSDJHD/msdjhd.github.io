@@ -9,12 +9,7 @@
   height: 100%;
   width: 100%;
   outline: none;
-  font-family: "阿里巴巴普惠体 2.0 65 Medium","Arial",Sans-Serif;
-  font-display: swap;
-}
-@font-face {
-  font-family: "阿里巴巴普惠体 2.0 65 Medium";font-weight: 500;src: url("https://at.alicdn.com/wf/webfont/CYuoliNh4YEO/gCMAsCNZ0YUk.woff2") format("woff2"),
-  url("https://at.alicdn.com/wf/webfont/CYuoliNh4YEO/IvFtvHg49ibM.woff") format("woff");
+  font-family: "Montserrat","Arial",Sans-Serif;
   font-display: swap;
 }
 html {
@@ -26,7 +21,6 @@ a {
   color: rgba(var(--textColorRgb),0.85);
   outline: none;
   font-size: calc(0.8rem+5vw);
-  font-weight: 400;
   position: relative;
   bottom: 0;
 }
@@ -37,22 +31,18 @@ a:hover {
 }
 h1 {
   font-size: calc(1.4rem + 5vw);
-  font-weight: 900;
   color: rgba(var(--textColorRgb),0.9);
 }
 h2 {
   font-size: calc(1.2rem + 5vw);
-  font-weight: 700;
   color: rgba(var(--textColorRgb),0.8);
 }
 h3 {
   font-size: calc(1rem + 5vw);
-  font-weight: 600;
   color: rgba(var(--textColorRgb),0.7);
 }
 p {
   font-size: calc(0.9rem + 5vw);
-  font-weight: 500;
   color: rgba(var(--textColorRgb),0.7);
 }
 i {
