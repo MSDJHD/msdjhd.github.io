@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  font-family: "iconfont","Montserrat","Arial",Sans-Serif;
+  font-display: swap;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('https://at.alicdn.com/t/c/font_4451430_gzrc6nlz96.woff2?t=1709442586904') format('woff2'),
+       url('https://at.alicdn.com/t/c/font_4451430_gzrc6nlz96.woff?t=1709442586904') format('woff'),
+       url('https://at.alicdn.com/t/c/font_4451430_gzrc6nlz96.ttf?t=1709442586904') format('truetype');
+}
+body {
+  background: #0f0f0f url('https://s11.ax1x.com/2024/02/20/pFtethQ.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 25vh;
+}
+h1 {
+  display: flex;
+  align-content: center;
+  align-items: stretch;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(255,255,255,0.8);
+}
+#searcher {
+  display: flex;
+  align-content: center;
+  align-items: stretch;
+  justify-content: center;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+#searchbox {
+  width: 50%;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem 0 0 1rem;
+  background: rgba(255,255,255,0.6);
+  box-sizing: border-box;
+  transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
+  color: black;
+  backdrop-filter: blur(10px);
+}
+#searchbox:hover,#searchbox:focus {
+  box-shadow: 0 0 5px white;
+}
+#searchbtn {
+  width: 15%;
+  border: none;
+  padding: 1rem;
+  border-radius: 0 1rem 1rem 0;
+  background: white;
+  transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
+}
+#searchbtn:hover,#searchbtn:focus {
+  box-shadow: 0 0 5px rgba(255,255,255,1);
+}
+#searchbtn:active {
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+}
+input {
+  outline: none;
+}
+#cover {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: none;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+  transition: 0.3s cubic-bezier(0, 0.5, 0.2, 1);
+}
+#cover.show {
+  backdrop-filter: blur(10px) brightness(75%);
+}
