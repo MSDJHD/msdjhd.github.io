@@ -1,10 +1,9 @@
 function search() {
   var search = document.getElementById('searchbox');
   if (search.value.length == 0) {
-    search.style.background = 'rgba(255,220,220,0.7)';
-    search.style.border = 'solid 2px rgba(255,50,50,0.7)'
+    search.classList.add('error');
   } else {
-    window.open('https://www.bing.com/search?q='+search.value)
+    window.open('https://www.bing.com/search?q='+search.value);
   }
 }
 function checkKey(event) {
@@ -14,17 +13,18 @@ function checkKey(event) {
   }
 }
 function sthBoxOnClick(e) {
-  e.target.style.background = 'rgba(255,255,255,0.8)';
-  e.target.style.width = '70%';
-  e.target.style.border = 'none'
-  document.getElementById('cover').classList.add('show');
+  var n = document.getElementById('searchbox');
+  var a = document.getElementById('cover');
+  n.classList.add('click');
+  n.classList.remove('error');
+  a.classList.add('show');
 }
 function coverOnClick() {
   var e = document.getElementById('cover');
   if (e.classList.contains('show')) {
     var n = document.getElementById('searchbox');
-    n.style.width = '50%';
-    n.style.background = 'rgba(255,255,255,0.6)';
+    n.classList.remove('click');
+    n.classList.remove('error');
     e.classList.remove('show');
   }
 }
