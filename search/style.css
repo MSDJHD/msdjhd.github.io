@@ -7,7 +7,7 @@ html {
   height: 100%;
   font-family: "iconfont","Montserrat","Arial",Sans-Serif;
   font-display: swap;
-  background: fixed no-repeat grey url("https://s11.ax1x.com/2024/02/20/pFtethQ.jpg");
+  background: fixed center center no-repeat grey url("https://s11.ax1x.com/2024/02/20/pFtethQ.jpg");
 }
 input[type="search"]::-webkit-search-cancel-button {
   display: none;
