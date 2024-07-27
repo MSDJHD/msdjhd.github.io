@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello,World!</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
+<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
+</blockquote>
+<p>在查阅</p>
+<ul>
+<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
+</ul>
+<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
+<hr>
+<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>使用Github Pages与Hexo构建个人博客</title>
     <url>/Use-GithubPages-and-Hexo-for-website-construction/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>某天我突发奇想，在查阅了一些文章后使用Github Pages与Hexo搭建了本站。我汇总了我搭建本站的经验，并写在这里。</p>
@@ -21,7 +38,7 @@
 </li>
 <li><p>下载后打开Git安装程序，在安装界面一路Next</p>
 </li>
-<li><p>安装后，点击<i class="fa-brands fa-windows"></i>+R打开运行窗口，输入cmd。之后，在cmd窗口中输入<code>git -v</code>可检测是否安装成功。</p>
+<li><p>安装后，按下 <i class="fa-brands fa-windows"></i> +R 打开运行窗口，输入cmd。之后，在cmd窗口中输入<code>git -v</code>可检测是否安装成功。</p>
 <p>成功输出：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">| git version 2.46.0.rc0.windows.1</span><br></pre></td></tr></table></figure>
 </li>
@@ -56,7 +73,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">| git version 2.43.4</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>这里参考了<a href="https://github.com/nodesource/distributions?tab=readme-ov-file#debian-and-ubuntu-based-distributions">这份readme</a></p>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>此部分参照了<a href="https://github.com/nodesource/distributions?tab=readme-ov-file#debian-and-ubuntu-based-distributions">这份readme</a></p>
 <ul>
 <li><p>依次运行：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install -y curl</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh</span><br><span class="line">sudo -E bash nodesource_setup.sh</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
@@ -78,15 +95,15 @@
 <li><p>安装完成后，在终端内输入以下内容来初始化博客文件夹：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init hexo</span><br></pre></td></tr></table></figure>
 <p>其中，<em>hexo</em>是一个文件夹名称，可以换成其他的名称使用。如果要安装多个博客，该命令也可以用来初始化其他博客文件夹（注意不要重名）。</p>
-<p>当提示<code>INFO  Start blogging with Hexo!</code>时，文件夹便初始化完成了。</p>
+<p>当提示<code>Start blogging with Hexo!</code>时，文件夹便初始化完成了。</p>
 <p><em>（官方文档对该命令的解释为新建一个网站）</em></p>
 </li>
 <li><p>之后，使用<code>cd *你的博客目录*</code>进入博客目录。</p>
 </li>
 </ul>
-<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="修改网站配置"><a href="#修改网站配置" class="headerlink" title="修改网站配置"></a>修改网站配置</h2><pre><code>    在你的博客文件夹内，会有一个`config.yml`。在这个文件中，你可以自由修改配置。你可以在[官方文档](https://hexo.io/zh-cn/docs/configuration)中了解更多信息。
-</code></pre><h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><pre><code>    此处参照了[Butterfly 安裝文檔](https://butterfly.js.org/posts/21cfbf15/)
-</code></pre><ul>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="修改网站配置"><a href="#修改网站配置" class="headerlink" title="修改网站配置"></a>修改网站配置</h2><p>在你的博客文件夹内，会有一个<code>config.yml</code>。在这个文件中，你可以自由修改配置。你可以在<a href="https://hexo.io/zh-cn/docs/configuration">官方文档</a>中了解更多信息。</p>
+<h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><p>此部分参照了<a href="https://butterfly.js.org/posts/21cfbf15/">Butterfly 安裝文檔</a></p>
+<ul>
 <li><p>进入博客目录后，我们可以先安装一个主题。（这里以<a href="https://butterfly.js.org/">butterfly</a>为例）</p>
 </li>
 <li><p>运行以下命令安装主题：</p>
@@ -99,11 +116,10 @@
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接下来，进入<code>你的博客目录/themes/butterfly/</code>目录，把里面的<code>_config.yml</code>重命名为<code>_config.butterfly.yml</code>，剪切到你的博客目录去。</p>
-<p>打开<code>_config.butterfly.yml</code>，进行主题配置。更多信息请参照<a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly 安裝文檔(三) 主題配置-1</a></p>
+<p>打开<code>_config.butterfly.yml</code>，进行主题配置。更多信息请参阅<a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly 安裝文檔(三) 主題配置-1</a></p>
 </li>
 </ul>
-<h1 id="撰写"><a href="#撰写" class="headerlink" title="撰写"></a>撰写</h1><p>使用<code>cd *你的博客目录*</code>进入博客文件夹，在此对你的博客进行修改。</p>
-<p>进入<code>你的博客目录/source</code>文件夹，一般来说你的文章、页面都在此处。</p>
+<h1 id="撰写"><a href="#撰写" class="headerlink" title="撰写"></a>撰写</h1><p>进入<code>你的博客目录/source</code>文件夹，一般来说你的文章、页面都在此处。</p>
 <p><strong>一些常见的撰写命令：</strong></p>
 <div class="table-container">
 <table>
@@ -129,7 +145,7 @@
 <blockquote>
 <p>关于图片等文件的存放位置，请参阅<a href="https://hexo.io/zh-cn/docs/asset-folders">Hexo官方文档</a></p>
 </blockquote>
-<p>更多信息请参照<a href="https://hexo.io/zh-cn/docs/writing">Hexo官方文档</a></p>
+<p>更多信息请参阅<a href="https://hexo.io/zh-cn/docs/writing">Hexo官方文档</a></p>
 <h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><ul>
 <li><p>建议在每次进入博客目录后、构建网站前运行<code>hexo clean</code>来清理缓存</p>
 </li>
@@ -142,7 +158,7 @@
 <li><p>尽量把文件存到<code>你的博客目录/source</code>里，否则更新Hexo或主题时会被覆盖。</p>
 </li>
 </ul>
-<h1 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h1><p>本部分参照<a href="https://hexo.io/zh-cn/docs/github-pages">Hexo官方文档</a></p>
+<h1 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h1><p>本部分参照了<a href="https://hexo.io/zh-cn/docs/github-pages">Hexo官方文档</a></p>
 <h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><ul>
 <li><p>登录到<a href="https://github.com/">Github</a></p>
 </li>
@@ -167,7 +183,7 @@
 <li><p>之后，访问<code>你的Github用户名.github.io</code>查看效果即可。</p>
 </li>
 </ul>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，网站部署完成。建议参考其他文章进一步配置你的网站。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，网站部署完成。建议参阅其他文章以进一步配置你的网站。</p>
 ]]></content>
       <categories>
         <category>教程</category>
@@ -177,22 +193,5 @@
         <tag>经验</tag>
         <tag>技术</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello,World!</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
-<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
-</blockquote>
-<p>在查阅</p>
-<ul>
-<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
-<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
-</ul>
-<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
-<hr>
-<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
-]]></content>
   </entry>
 </search>
