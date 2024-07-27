@@ -17,4 +17,181 @@
 <p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>使用Github Pages与Hexo构建个人博客</title>
+    <url>/Use-GithubPages-and-Hexo-for-website-construction/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>某天我突发奇想，在查阅了一些文章后使用Github Pages与Hexo搭建了本站。我汇总了我搭建本站的经验，并写在这里。</p>
+<h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>要安装Hexo，你首先需要安装node.js，git。</p>
+<div class="tabs" id="prepare"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="prepare-1"><i class="fab fa-windows"></i>Windows</button><button type="button" class="tab " data-href="prepare-2"><i class="fab fa-debian"></i>Debian系Linux发行版</button></ul><div class="tab-contents"><div class="tab-item-content active" id="prepare-1"><h2 id="Windows安装"><a href="#Windows安装" class="headerlink" title="Windows安装"></a>Windows安装</h2><p>此部分参照了<a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">这篇文章</a></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
+<li><p>官网下载：</p>
+<p>打开<a href="https://git-scm.com/download/win">Git官网</a></p>
+<p>建议选择64位版本下载</p>
+<p><img src="/images/2-git.png" alt="Git官网下载"></p>
+</li>
+<li><p>镜像下载：</p>
+<p>打开<a href="https://mirrors.huaweicloud.com/git-for-windows/">华为云镜像站</a></p>
+<p>在首页选择一个版本进入（建议往下翻到最新版）</p>
+<p><img src="/images/2-git-mirror-1.png" height="300px"></p>
+<p>在新界面中选择Git-xxx-64/32-bit.exe文件下载（建议选择64位）</p>
+<p><img src="/images/2-git-mirror-2.png" alt="华为镜像站下载"></p>
+</li>
+<li><p>下载后打开Git安装程序，在安装界面一路Next</p>
+</li>
+<li><p>安装后，点击<i class="fa-brands fa-windows"></i>+R打开运行窗口，输入cmd。之后，在cmd窗口中输入<code>git -v</code>可检测是否安装成功。</p>
+<p>成功输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">| git version 2.46.0.rc0.windows.1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><ul>
+<li><p>打开<a href="https://nodejs.org/zh-cn/download/prebuilt-installer">Node.js官网</a></p>
+</li>
+<li><p>选择系统版本并下载（建议选择64位版本，版本默认即可）</p>
+<p>(Node.js官网下载速度实测挺快的)</p>
+</li>
+</ul>
+<p><img src="/images/2-nodejs.png" alt="Node.js下载"></p>
+<ul>
+<li><p>下载后打开，进入安装界面，一路next即可</p>
+</li>
+<li><p>安装后打开cmd，输入以下命令可检测是否安装成功：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>成功输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">| v20.15.1</span><br><span class="line">npm -v</span><br><span class="line">| 10.7.0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>至此，准备工作完成。</p></div><div class="tab-item-content" id="prepare-2"><h2 id="Debian系Linux发行版安装"><a href="#Debian系Linux发行版安装" class="headerlink" title="Debian系Linux发行版安装"></a>Debian系Linux发行版安装</h2><p>此部分参照了<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
+<li><p>打开终端</p>
+</li>
+<li><p>输入<code>sudo apt-get install git-core</code></p>
+</li>
+<li><p>等待安装完成</p>
+</li>
+<li><p>安装完成后，输入<code>git -v</code>查看是否安装成功</p>
+<p>成功输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">| git version 2.43.4</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>这里参考了<a href="https://github.com/nodesource/distributions?tab=readme-ov-file#debian-and-ubuntu-based-distributions">这份readme</a></p>
+<ul>
+<li><p>依次运行：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install -y curl</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh</span><br><span class="line">sudo -E bash nodesource_setup.sh</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<p>在这里不报错即安装成功。</p>
+</li>
+<li><p>安装成功后，在终端中输入以下命令来检测是否安装成功：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p>成功输出：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">| v22.5.1</span><br><span class="line">npm -v</span><br><span class="line">| 10.8.2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>至此，准备工作完成。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul>
+<li><p>打开cmd或你的终端，输入以下命令来安装Hexo本体：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>可使用<code>hexo v</code>检测是否安装完成</p>
+<p>当输出很长一串列表时，那就是安装成功了</p>
+</li>
+<li><p>安装完成后，在终端内输入以下内容来初始化博客文件夹：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init hexo</span><br></pre></td></tr></table></figure>
+<p>其中，<em>hexo</em>是一个文件夹名称，可以换成其他的名称使用。如果要安装多个博客，该命令也可以用来初始化其他博客文件夹（注意不要重名）。</p>
+<p>当提示<code>INFO  Start blogging with Hexo!</code>时，文件夹便初始化完成了。</p>
+<p><em>（官方文档对该命令的解释为新建一个网站）</em></p>
+</li>
+<li><p>之后，使用<code>cd *你的博客目录*</code>进入博客目录。</p>
+</li>
+</ul>
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><h2 id="修改网站配置"><a href="#修改网站配置" class="headerlink" title="修改网站配置"></a>修改网站配置</h2><pre><code>    在你的博客文件夹内，会有一个`config.yml`。在这个文件中，你可以自由修改配置。你可以在[官方文档](https://hexo.io/zh-cn/docs/configuration)中了解更多信息。
+</code></pre><h2 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h2><pre><code>    此处参照了[Butterfly 安裝文檔](https://butterfly.js.org/posts/21cfbf15/)
+</code></pre><ul>
+<li><p>进入博客目录后，我们可以先安装一个主题。（这里以<a href="https://butterfly.js.org/">butterfly</a>为例）</p>
+</li>
+<li><p>运行以下命令安装主题：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装完成后，运行以下命令安装所需插件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接下来，打开博客目录下的<code>_config.yml</code>文件，找到<code>theme: xxx</code>，修改为：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接下来，进入<code>你的博客目录/themes/butterfly/</code>目录，把里面的<code>_config.yml</code>重命名为<code>_config.butterfly.yml</code>，剪切到你的博客目录去。</p>
+<p>打开<code>_config.butterfly.yml</code>，进行主题配置。更多信息请参照<a href="https://butterfly.js.org/posts/4aa8abbe/">Butterfly 安裝文檔(三) 主題配置-1</a></p>
+</li>
+</ul>
+<h1 id="撰写"><a href="#撰写" class="headerlink" title="撰写"></a>撰写</h1><p>使用<code>cd *你的博客目录*</code>进入博客文件夹，在此对你的博客进行修改。</p>
+<p>进入<code>你的博客目录/source</code>文件夹，一般来说你的文章、页面都在此处。</p>
+<p><strong>一些常见的撰写命令：</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo new <em>xxx</em></td>
+<td>新建一篇文章，标题为 <em>xxx</em> 。文章的markdown文件可在输出路径中找到</td>
+</tr>
+<tr>
+<td>hexo new page <em>xxx</em></td>
+<td>新建一个页面，标题为 <em>xxx</em> 。页面的markdown文件可在输出路径中找到</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>进入你的文章/页面目录，使用你心仪的markdown编辑器开始撰写吧！（删除文章只需删除对应的文件就可以）</p>
+<blockquote>
+<p>关于图片等文件的存放位置，请参阅<a href="https://hexo.io/zh-cn/docs/asset-folders">Hexo官方文档</a></p>
+</blockquote>
+<p>更多信息请参照<a href="https://hexo.io/zh-cn/docs/writing">Hexo官方文档</a></p>
+<h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><ul>
+<li><p>建议在每次进入博客目录后、构建网站前运行<code>hexo clean</code>来清理缓存</p>
+</li>
+<li><p>可使用以下命令一键构建网站（下面会提到）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可使用以下命令调试网站（可在修改网站后运行查看效果）：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>尽量把文件存到<code>你的博客目录/source</code>里，否则更新Hexo或主题时会被覆盖。</p>
+</li>
+</ul>
+<h1 id="部署至Github"><a href="#部署至Github" class="headerlink" title="部署至Github"></a>部署至Github</h1><p>本部分参照<a href="https://hexo.io/zh-cn/docs/github-pages">Hexo官方文档</a></p>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><ul>
+<li><p>登录到<a href="https://github.com/">Github</a></p>
+</li>
+<li><p><a href="https://github.com/new">创建一个新仓库</a>，仓库名称需为<code>你的Github用户名.github.io</code>，仓库建议设为公有，其他不用动，直接创建即可。</p>
+</li>
+<li><p>之后，你会跳转到你的仓库界面。复制<code>https;//github.com/xxx/xxxxx.git</code>的链接，后面需要用到。</p>
+</li>
+</ul>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ul>
+<li><p>安装所需插件<a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装后，在<code>_config.yml</code>末尾添加如下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https;//github.com/xxx/xxxxx.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<p>在这里，<code>repo</code>填写你的Github仓库地址（如果你复制了链接，直接粘贴即可）。<code>xxx</code>是你的用户名，<code>xxxxx</code>是你的仓库名。</p>
+<p><code>branch</code>指的是你仓库的分支，默认新仓库均为<code>main</code>。</p>
+</li>
+<li><p>配置后，运行：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后，访问<code>你的Github用户名.github.io</code>查看效果即可。</p>
+</li>
+</ul>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，网站部署完成。为了将来的稳定运营，建议遇到问题多搜索，自己动手丰衣足食。</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>经验</tag>
+        <tag>技术</tag>
+      </tags>
+  </entry>
 </search>
