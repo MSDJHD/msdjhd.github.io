@@ -162,6 +162,7 @@
 </li>
 <li><p>配置后，运行以下命令来部署你的网站（网站有修改需要上线时也需要用到这个命令）：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
+<p>若出现<code>Deploy done: git</code>，说明部署成功。</p>
 </li>
 <li><p>之后，访问<code>你的Github用户名.github.io</code>查看效果即可。</p>
 </li>
