@@ -150,7 +150,7 @@
 <h1 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h1><ul>
 <li><p>建议在每次进入博客目录后、构建网站前运行<code>hexo clean</code>来清理缓存</p>
 </li>
-<li><p>可使用以下命令一键构建网站（下面会提到）：</p>
+<li><p>可使用以下命令构建（上线）网站（下面会提到）：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>可使用以下命令调试网站（可在修改网站后运行查看效果）：</p>
@@ -177,13 +177,13 @@
 <p>在这里，<code>repo</code>填写你的Github仓库地址（如果你复制了链接，直接粘贴即可）。<code>xxx</code>是你的用户名，<code>xxxxx</code>是你的仓库名。</p>
 <p><code>branch</code>指的是你仓库的分支，默认新仓库均为<code>main</code>。</p>
 </li>
-<li><p>配置后，运行：</p>
+<li><p>配置后，运行以下命令来部署你的网站（网站有修改需要上线时也需要用到这个命令）：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
 </li>
 <li><p>之后，访问<code>你的Github用户名.github.io</code>查看效果即可。</p>
 </li>
 </ul>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，网站部署完成。为了将来的稳定运营，建议遇到问题多搜索，自己动手丰衣足食。</p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>至此，网站部署完成。建议参考其他文章进一步配置你的网站。</p>
 ]]></content>
       <categories>
         <category>教程</category>
