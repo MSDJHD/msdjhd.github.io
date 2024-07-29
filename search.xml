@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello,World!</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
+<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
+</blockquote>
+<p>在查阅</p>
+<ul>
+<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
+</ul>
+<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
+<hr>
+<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>使用Github Pages与Hexo搭建个人博客</title>
     <url>/Use-GithubPages-and-Hexo-for-website-construction/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>某天我突发奇想，在查阅了一些文章后使用Github Pages与Hexo搭建了本站。我汇总了我搭建本站的经验，并写在这里。</p>
@@ -10,20 +27,20 @@
 <li><p>官网下载：</p>
 <p>打开<a href="https://git-scm.com/download/win">Git官网</a></p>
 <p>建议选择64位版本下载</p>
-<p><img src="/images/2-git.png" alt="Git官网下载"></p>
+<p><img src="/images/2/2-git.png" alt="Git官网下载"></p>
 </li>
 <li><p>镜像下载：</p>
 <p>打开<a href="https://mirrors.huaweicloud.com/git-for-windows/">华为云镜像站</a></p>
 <p>在首页选择一个版本进入（建议往下翻到最新版）</p>
-<p><img src="/images/2-git-mirror-1.png" height="300px"></p>
+<p><img src="/images/2/2-git-mirror-1.png" height="300px"></p>
 <p>在新界面中选择Git-xxx-64/32-bit.exe文件下载（建议选择64位）</p>
-<p><img src="/images/2-git-mirror-2.png" alt="华为镜像站下载"></p>
+<p><img src="/images/2/2-git-mirror-2.png" alt="华为镜像站下载"></p>
 </li>
 <li><p>下载后打开Git安装程序，在安装界面一路Next</p>
 </li>
 <li><p>安装后，按下 <i class="fa-brands fa-windows"></i> +R 打开运行窗口，输入cmd。之后，在cmd窗口中输入<code>git -v</code>可检测是否安装成功。</p>
 <p>成功输出：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">| git version 2.46.0.rc0.windows.1</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git <span class="literal">-v</span></span><br><span class="line">| git version <span class="number">2.46</span>.<span class="number">0</span>.rc0.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><ul>
@@ -33,14 +50,14 @@
 <p>(Node.js官网下载速度实测挺快的)</p>
 </li>
 </ul>
-<p><img src="/images/2-nodejs.png" alt="Node.js下载"></p>
+<p><img src="/images/2/2-nodejs.png" alt="Node.js下载"></p>
 <ul>
 <li><p>下载后打开，进入安装界面，一路next即可</p>
 </li>
 <li><p>安装后打开cmd，输入以下命令可检测是否安装成功：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 <p>成功输出：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">| v20.15.1</span><br><span class="line">npm -v</span><br><span class="line">| 10.7.0</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">| v20.<span class="number">15.1</span></span><br><span class="line">npm <span class="literal">-v</span></span><br><span class="line">| <span class="number">10.7</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>至此，准备工作完成。</p></div><div class="tab-item-content" id="prepare-2"><h2 id="Debian系Linux发行版安装"><a href="#Debian系Linux发行版安装" class="headerlink" title="Debian系Linux发行版安装"></a>Debian系Linux发行版安装</h2><p>此部分参照了<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></p>
@@ -53,38 +70,38 @@
 </li>
 <li><p>安装完成后，输入<code>git -v</code>查看是否安装成功</p>
 <p>成功输出：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git -v</span><br><span class="line">| git version 2.43.4</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git <span class="literal">-v</span></span><br><span class="line">| git version <span class="number">2.43</span>.<span class="number">4</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>此部分参照了<a href="https://github.com/nodesource/distributions?tab=readme-ov-file#debian-and-ubuntu-based-distributions">这份readme</a></p>
 <ul>
 <li><p>依次运行：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install -y curl</span><br><span class="line">curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh</span><br><span class="line">sudo -E bash nodesource_setup.sh</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">sudo apt<span class="literal">-get</span> install <span class="literal">-y</span> <span class="built_in">curl</span></span><br><span class="line"><span class="built_in">curl</span> <span class="literal">-fsSL</span> https://deb.nodesource.com/setup_22.x <span class="literal">-o</span> nodesource_setup.sh</span><br><span class="line">sudo <span class="literal">-E</span> bash nodesource_setup.sh</span><br><span class="line">sudo apt<span class="literal">-get</span> install <span class="literal">-y</span> nodejs</span><br></pre></td></tr></table></figure>
 <p>在这里不报错即安装成功。</p>
 </li>
 <li><p>安装成功后，在终端中输入以下命令来检测是否安装成功：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
 <p>成功输出：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">| v22.5.1</span><br><span class="line">npm -v</span><br><span class="line">| 10.8.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">| v22.<span class="number">5.1</span></span><br><span class="line">npm <span class="literal">-v</span></span><br><span class="line">| <span class="number">10.8</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>至此，准备工作完成。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul>
 <li><p>建议先更换npm淘宝源：</p>
 <p>打开cmd或终端，输入以下命令切换淘宝源：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config set registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
 <p>更换后可使用以下命令查看是否切换成功：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
 <p>成功输出：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm config get registry</span><br><span class="line">| https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm config get registry</span><br><span class="line">| https://registry.npmmirror.com/</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>输入以下命令来安装Hexo本体：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install <span class="literal">-g</span> hexo<span class="literal">-cli</span></span><br></pre></td></tr></table></figure>
 <p>可使用<code>hexo v</code>检测是否安装完成</p>
 <p>当输出很长一串列表时，那就是安装成功了</p>
 </li>
 <li><p>安装完成后，在终端内输入以下内容来初始化博客文件夹：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo init hexo</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo init hexo</span><br></pre></td></tr></table></figure>
 <p>其中，<em>hexo</em>是一个文件夹名称，可以换成其他的名称使用。如果要安装多个博客，该命令也可以用来初始化其他博客文件夹（注意不要重名）。</p>
 <p>当提示<code>Start blogging with Hexo!</code>时，文件夹便初始化完成了。</p>
 <p><em>（官方文档对该命令的解释为新建一个网站）</em></p>
@@ -98,10 +115,10 @@
 <li><p>进入博客目录后，我们可以先安装一个主题。（这里以<a href="https://butterfly.js.org/">butterfly</a>为例）</p>
 </li>
 <li><p>运行以下命令安装主题：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone -b master https://gitee.com/immyw/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git clone <span class="literal">-b</span> master https://gitee.com/immyw/hexo<span class="literal">-theme-butterfly</span>.git themes/butterfly</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装完成后，运行以下命令安装所需插件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-renderer-pug</span> hexo<span class="literal">-renderer-stylus</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接下来，打开博客目录下的<code>_config.yml</code>文件，找到<code>theme: xxx</code>，修改为：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">butterfly</span></span><br></pre></td></tr></table></figure>
@@ -141,10 +158,10 @@
 <li><p>建议在每次进入博客目录后、构建网站前运行<code>hexo clean</code>来清理缓存</p>
 </li>
 <li><p>可使用以下命令构建（上线）网站（下面会提到）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>可使用以下命令调试网站（可在修改网站后运行查看效果）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>尽量把文件存到<code>你的博客目录/source</code>里，否则更新Hexo或主题时会被覆盖。</p>
 </li>
@@ -160,7 +177,7 @@
 </ul>
 <h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><ul>
 <li><p>安装所需插件<a href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a>：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">npm install hexo<span class="literal">-deployer-git</span> <span class="literal">--save</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装后，在<code>_config.yml</code>末尾添加如下内容：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https;//github.com/xxx/xxxxx.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
@@ -168,7 +185,7 @@
 <p><code>branch</code>指的是你仓库的分支，默认新仓库均为<code>main</code>。</p>
 </li>
 <li><p>配置后，运行以下命令来部署你的网站（网站有修改需要上线时也需要用到这个命令）：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
 <p>若出现<code>Deploy done: git</code>，说明部署成功。</p>
 </li>
 <li><p>之后，访问<code>你的Github用户名.github.io</code>查看效果即可。</p>
@@ -184,22 +201,5 @@
         <tag>经验</tag>
         <tag>技术</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello,World!</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
-<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
-</blockquote>
-<p>在查阅</p>
-<ul>
-<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
-<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
-</ul>
-<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
-<hr>
-<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
-]]></content>
   </entry>
 </search>
