@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello,World!</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
+<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
+</blockquote>
+<p>在查阅</p>
+<ul>
+<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
+</ul>
+<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
+<hr>
+<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>2025-1-12-log</title>
     <url>/2025-1-12-log/</url>
     <content><![CDATA[<h1 id="近期情形"><a href="#近期情形" class="headerlink" title="近期情形"></a>近期情形</h1><ul>
@@ -26,91 +43,10 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello,World!</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
-<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
-</blockquote>
-<p>在查阅</p>
-<ul>
-<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
-<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
-</ul>
-<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
-<hr>
-<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>使用Github Pages与Hexo搭建个人博客</title>
     <url>/Use-GithubPages-and-Hexo-for-website-construction/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>某天我突发奇想，在查阅了一些文章后使用Github Pages与Hexo搭建了本站。我汇总了我搭建本站的经验，并写在这里。</p>
 <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><p>要安装Hexo，你首先需要安装node.js，git。</p>
-<div class="tabs" id="prepare"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="prepare-1"><i class="fab fa-windows"></i>Windows</button><button type="button" class="tab " data-href="prepare-2"><i class="fab fa-debian"></i>Debian系Linux发行版</button></ul><div class="tab-contents"><div class="tab-item-content active" id="prepare-1"><h2 id="Windows安装"><a href="#Windows安装" class="headerlink" title="Windows安装"></a>Windows安装</h2><p>此部分参照了<a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">这篇文章</a></p>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
-<li><p>官网下载：</p>
-<p>打开<a href="https://git-scm.com/download/win">Git官网</a></p>
-<p>建议选择64位版本下载</p>
-<p><img src="/images/2/2-git.png" alt="Git官网下载"></p>
-</li>
-<li><p>镜像下载：</p>
-<p>打开<a href="https://mirrors.huaweicloud.com/git-for-windows/">华为云镜像站</a></p>
-<p>在首页选择一个版本进入（建议往下翻到最新版）</p>
-<p><img src="/images/2/2-git-mirror-1.png" height="300px"></p>
-<p>在新界面中选择Git-xxx-64/32-bit.exe文件下载（建议选择64位）</p>
-<p><img src="/images/2/2-git-mirror-2.png" alt="华为镜像站下载"></p>
-</li>
-<li><p>下载后打开Git安装程序，在安装界面一路Next</p>
-</li>
-<li><p>安装后，按下 <i class="fa-brands fa-windows"></i> +R 打开运行窗口，输入cmd。之后，在cmd窗口中输入<code>git -v</code>可检测是否安装成功。</p>
-<p>成功输出：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git <span class="literal">-v</span></span><br><span class="line">| git version <span class="number">2.46</span>.<span class="number">0</span>.rc0.windows.<span class="number">1</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><ul>
-<li><p>打开<a href="https://nodejs.org/zh-cn/download/prebuilt-installer">Node.js官网</a></p>
-</li>
-<li><p>选择系统版本并下载（建议选择64位版本，版本默认即可）</p>
-<p>(Node.js官网下载速度实测挺快的)</p>
-</li>
-</ul>
-<p><img src="/images/2/2-nodejs.png" alt="Node.js下载"></p>
-<ul>
-<li><p>下载后打开，进入安装界面，一路next即可</p>
-</li>
-<li><p>安装后打开cmd，输入以下命令可检测是否安装成功：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
-<p>成功输出：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">| v20.<span class="number">15.1</span></span><br><span class="line">npm <span class="literal">-v</span></span><br><span class="line">| <span class="number">10.7</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>至此，准备工作完成。</p></div><div class="tab-item-content" id="prepare-2"><h2 id="Debian系Linux发行版安装"><a href="#Debian系Linux发行版安装" class="headerlink" title="Debian系Linux发行版安装"></a>Debian系Linux发行版安装</h2><p>此部分参照了<a href="https://hexo.io/zh-cn/docs/">Hexo官方文档</a></p>
-<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><ul>
-<li><p>打开终端</p>
-</li>
-<li><p>输入<code>sudo apt-get install git-core</code></p>
-</li>
-<li><p>等待安装完成</p>
-</li>
-<li><p>安装完成后，输入<code>git -v</code>查看是否安装成功</p>
-<p>成功输出：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">git <span class="literal">-v</span></span><br><span class="line">| git version <span class="number">2.43</span>.<span class="number">4</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>此部分参照了<a href="https://github.com/nodesource/distributions?tab=readme-ov-file#debian-and-ubuntu-based-distributions">这份readme</a></p>
-<ul>
-<li><p>依次运行：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">sudo apt<span class="literal">-get</span> install <span class="literal">-y</span> <span class="built_in">curl</span></span><br><span class="line"><span class="built_in">curl</span> <span class="literal">-fsSL</span> https://deb.nodesource.com/setup_22.x <span class="literal">-o</span> nodesource_setup.sh</span><br><span class="line">sudo <span class="literal">-E</span> bash nodesource_setup.sh</span><br><span class="line">sudo apt<span class="literal">-get</span> install <span class="literal">-y</span> nodejs</span><br></pre></td></tr></table></figure>
-<p>在这里不报错即安装成功。</p>
-</li>
-<li><p>安装成功后，在终端中输入以下命令来检测是否安装成功：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">npm <span class="literal">-v</span></span><br></pre></td></tr></table></figure>
-<p>成功输出：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">node <span class="literal">-v</span></span><br><span class="line">| v22.<span class="number">5.1</span></span><br><span class="line">npm <span class="literal">-v</span></span><br><span class="line">| <span class="number">10.8</span>.<span class="number">2</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>至此，准备工作完成。</p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><ul>
 <li><p>建议先更换npm淘宝源：</p>
 <p>打开cmd或终端，输入以下命令切换淘宝源：</p>
