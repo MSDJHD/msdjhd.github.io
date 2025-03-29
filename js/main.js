@@ -1,3 +1,58 @@
+//背景图片懒加载
+if ('IntersectionObserver' in window) {
+    document.addEventListener("DOMContentLoaded", function() {
+  
+      function handleIntersection(entries) {
+        entries.map((entry) => {
+          if (entry.isIntersecting) {
+            // 元素已经穿过了我们的观察
+            // 阈值 - 从data-src加载src
+            entry.target.style.backgroundImage = "url('"+entry.target.dataset.bgimage+"')";
+            // 这个元素的任务完成了 - 不需要再观察它了！
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+  
+      const lazy = document.querySelectorAll('.lazy');
+      const observer = new IntersectionObserver(
+        handleIntersection,
+        { rootMargin: "100px" }
+      );
+      lazy.forEach(lazyItem => observer.observe(lazyItem));
+    });
+  } else {
+    // 没有交互支持？自动加载所有背景图片
+    const lazy = document.querySelectorAll('.lazy');
+    lazy.forEach(lazyItem => {
+      lazyItem.style.backgroundImage = "url('"+lazyItem.dataset.bgimage+"')";
+    });
+  }
+// 图片懒加载
+  function handleIntersection(entries) {
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        // 元素已经穿过了我们的观察
+        // 阈值 - 从data-src加载src
+        entry.target.src = entry.target.dataset.src;
+        entry.target.classList.remove('lazyload');
+        // 这个元素的任务完成了 - 不需要再观察它了！
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+  
+  const images = document.querySelectorAll('.lazy');
+  const observer = new IntersectionObserver(
+    handleIntersection,
+    { rootMargin: "100px" }
+  );
+  images.forEach(image => observer.observe(image));
+
+document.querySelectorAll('img').forEach(img => {
+    img.classList.add('lazy');
+    img.dataset.src = '/img/loading.png';
+});
 window.onload = function () {
     document.querySelectorAll('.post-card, #banner').forEach(card => {
         const randomImageUrl = `https://imgapi.cn/api.php?zd=pc&fl=dongman&gs=images&random=${Math.random()}`;
@@ -49,50 +104,3 @@ function scrollToComment() {
         comment.scrollIntoView({ behavior: 'smooth' });
     }
 }
-document.addEventListener("DOMContentLoaded", function () {
-    var lazyloadImages;
-    if ("IntersectionObserver" in window) {
-        lazyloadImages = document.querySelectorAll(".lazy");
-        var imageObserver = new IntersectionObserver(function (entries, observer) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var image = entry.target;
-                    image.classList.remove("lazy");
-                    imageObserver.unobserve(image);
-                }
-            });
-        });
-
-        lazyloadImages.forEach(function (image) {
-            imageObserver.observe(image);
-        });
-    } else {
-        var lazyloadThrottleTimeout;
-        lazyloadImages = document.querySelectorAll(".lazy");
-
-        function lazyload() {
-            if (lazyloadThrottleTimeout) {
-                clearTimeout(lazyloadThrottleTimeout);
-            }
-
-            lazyloadThrottleTimeout = setTimeout(function () {
-                var scrollTop = window.pageYOffset;
-                lazyloadImages.forEach(function (img) {
-                    if (img.offsetTop < (window.innerHeight + scrollTop)) {
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                    }
-                });
-                if (lazyloadImages.length == 0) {
-                    document.removeEventListener("scroll", lazyload);
-                    window.removeEventListener("resize", lazyload);
-                    window.removeEventListener("orientationChange", lazyload);
-                }
-            }, 20);
-        }
-
-        document.addEventListener("scroll", lazyload);
-        window.addEventListener("resize", lazyload);
-        window.addEventListener("orientationChange", lazyload);
-    }
-})
