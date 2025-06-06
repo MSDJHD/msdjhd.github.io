@@ -26,6 +26,7 @@ window.onload = function () {
         themeButton.querySelector('#dark-button').style.display = 'none';
         themeButton.querySelector('#light-button').style.display = 'flex';
     }
+    showArticleIndex();
 }
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -59,9 +60,6 @@ function toc() {
         toc.style.animation = 'toc-out 0.2s cubic-bezier(0,0,0,1) forwards';
     }
 }
-$(document).ready(function () {
-  showArticleIndex();
-});
 
 function showArticleIndex() {
   // 先刷一遍文章有哪些节点，把 h1 h2 h3 加入列表，等下循环进行处理。
