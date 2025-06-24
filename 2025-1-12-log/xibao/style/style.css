@@ -1,0 +1,93 @@
+@font-face {
+    font-family: 'YouSheBiaoTiHei';
+    src: url('YouSheBiaoTiHei-2.ttf') format('truetype');
+}
+body {
+    background: fixed url("https://img.dexbug.com/i/2025/06/24/brctt9.png") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    font-family:'YouSheBiaoTiHei';
+    font-weight: 400;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+#message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    width: 100vw;
+    height: 90vh;
+    background: #ffffff;
+    border-radius: 1em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0, 0, 0, 1);
+}
+iframe {
+    border: orangered 1px solid;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h1 {
+    font-size: 5em;
+    margin: 0.5em 0;
+    color: #c3141b;
+    font-family:'YouSheBiaoTiHei';
+    font-weight: 400;
+    text-align: center;
+    text-shadow: 
+     -2px -2px 0 #fef200,  
+     2px -2px 0 #fef200,
+     -2px  2px 0 #fef200,
+     2px  2px 0 #fef200,
+     0px  0px 6px #fef200,
+     4px  4px 6px #00000096; /* 右下方黑色阴影 */
+}
+button {
+    background-color: #c3141b;
+    color: #fef200;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    font-family:'YouSheBiaoTiHei';
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+button:hover {
+    background-color: #fef200;
+    color: #c3141b;
+    box-shadow: 0 0 30px #c3141b;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    box-sizing: border-box;
+}
+.btn {
+    margin: 1px;
+}
