@@ -1,13 +1,12 @@
 window.onload = function () {
-    document.querySelectorAll('.post-card').forEach(card => {
-        const randomImageUrl = `https://imgapi.cn/api.php?zd=pc&fl=dongman&gs=images&random=${Math.random()}`;
-        card.style.backgroundImage = `url(${randomImageUrl})`;
-    });
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('theme', 'dark');
-    } else {
-        document.documentElement.setAttribute('theme', 'light');
-    }
+    const isHomePage = location.pathname === '/' || location.pathname === '/index.html';
+    if (isHomePage) {
+        const postCards = document.querySelectorAll('.post-card');
+        postCards.forEach(card => {
+            const randomImageUrl = `https://imgapi.cn/api.php?zd=pc&fl=dongman&gs=images&random=${Math.random()}`;
+                card.style.backgroundImage = `url(${randomImageUrl})`;
+        });
+    };
     const themeCookie = document.cookie.split('; ').find(row => row.startsWith('theme='));
     if (themeCookie) {
         const theme = themeCookie.split('=')[1];
@@ -15,7 +14,7 @@ window.onload = function () {
     } else {
         const defaultTheme = 'light';
         document.documentElement.setAttribute('theme', defaultTheme);
-        document.cookie = `theme=${defaultTheme}; path=/; max-age=31536000`;
+        document.cookie = `theme=${defaultTheme}; path=/; max-age=3600`;
     }
     const themeButton = document.querySelector('#dock-theme');
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -26,7 +25,11 @@ window.onload = function () {
         themeButton.querySelector('#dark-button').style.display = 'none';
         themeButton.querySelector('#light-button').style.display = 'flex';
     }
-    showArticleIndex();
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.cookie = 'theme=dark; path=/; max-age=3600';
+        } else {
+        document.cookie = 'theme=light; path=/; max-age=3600';
+    }
     // 在 head 中插入字体样式表
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -57,6 +60,8 @@ function scrollToComment() {
     }
 }
 function toc() {
+    showArticleIndex();
+    window.scrollBy({ top: 1, behavior: 'smooth' });
     const toc = document.querySelector('#toc');
     toc.style.display = toc.style.display === 'block' ? 'none' : 'block';
     if (toc.style.display === 'block') {
