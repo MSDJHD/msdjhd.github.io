@@ -1,5 +1,5 @@
 window.onload = function () {
-    document.querySelectorAll('.post-card, #banner').forEach(card => {
+    document.querySelectorAll('.post-card').forEach(card => {
         const randomImageUrl = `https://imgapi.cn/api.php?zd=pc&fl=dongman&gs=images&random=${Math.random()}`;
         card.style.backgroundImage = `url(${randomImageUrl})`;
     });
@@ -27,6 +27,12 @@ window.onload = function () {
         themeButton.querySelector('#light-button').style.display = 'flex';
     }
     showArticleIndex();
+    // 在 head 中插入字体样式表
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/cn-fontsource-975-maru-sc-regular/font.css';
+    document.head.appendChild(link);
+    document.documentElement.style.fontFamily = '"975Maru SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif';
 }
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -129,3 +135,11 @@ function showArticleIndex() {
       });
   });
 }
+document.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 100) {
+        header.classList.add('shown');
+    } else {
+        header.classList.remove('shown');
+    }
+});
