@@ -25,10 +25,13 @@ window.onload = function () {
         themeButton.querySelector('#dark-button').style.display = 'none';
         themeButton.querySelector('#light-button').style.display = 'flex';
     }
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.cookie = 'theme=dark; path=/; max-age=3600';
+    // 如果 cookie 不存在，则根据系统深色模式设置 cookie，否则保持不变
+    if (!themeCookie) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.cookie = 'theme=dark; path=/; max-age=3600';
         } else {
-        document.cookie = 'theme=light; path=/; max-age=3600';
+            document.cookie = 'theme=light; path=/; max-age=3600';
+        }
     }
     // 在 head 中插入字体样式表
     const link = document.createElement('link');
