@@ -3,7 +3,7 @@ window.onload = function () {
     if (isHomePage) {
         const postCards = document.querySelectorAll('.post-card');
         postCards.forEach(card => {
-            const randomImageUrl = `https://imgapi.cn/api.php?zd=pc&fl=dongman&gs=images&random=${Math.random()}`;
+            const randomImageUrl = `https://t.alcy.cc/moe?random=${Math.random()}`;
                 card.style.backgroundImage = `url(${randomImageUrl})`;
         });
     };
@@ -34,6 +34,12 @@ window.onload = function () {
             themeButton.querySelector('#light-button').style.display = 'flex';
         }
     }
+    // 设置 #banner 的背景图片
+    const banner = document.querySelector('#banner');
+    banner.style.backgroundImage = 'url("https://www.dmoe.cc/random.php?random=1")';
+
+    // 在 body 的 css 中插入背景图片
+    document.body.style.backgroundImage = 'url("https://www.dmoe.cc/random.php")';
 }
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
