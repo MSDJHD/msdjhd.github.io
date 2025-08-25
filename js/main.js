@@ -7,38 +7,33 @@ window.onload = function () {
                 card.style.backgroundImage = `url(${randomImageUrl})`;
         });
     };
-    const themeCookie = document.cookie.split('; ').find(row => row.startsWith('theme='));
-    if (themeCookie) {
-        const theme = themeCookie.split('=')[1];
-        document.documentElement.setAttribute('theme', theme);
-    } else {
-        const defaultTheme = 'light';
-        document.documentElement.setAttribute('theme', defaultTheme);
-        document.cookie = `theme=${defaultTheme}; path=/; max-age=3600`;
-    }
-    const themeButton = document.querySelector('#dock-theme');
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    if (currentTheme === 'dark') {
-        themeButton.querySelector('#light-button').style.display = 'none';
-        themeButton.querySelector('#dark-button').style.display = 'flex';
-    } else {
-        themeButton.querySelector('#dark-button').style.display = 'none';
-        themeButton.querySelector('#light-button').style.display = 'flex';
-    }
-    // 如果 cookie 不存在，则根据系统深色模式设置 cookie，否则保持不变
-    if (!themeCookie) {
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.cookie = 'theme=dark; path=/; max-age=3600';
-        } else {
-            document.cookie = 'theme=light; path=/; max-age=3600';
-        }
-    }
     // 在 head 中插入字体样式表
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://cdn.jsdelivr.net/npm/cn-fontsource-975-maru-sc-regular/font.css';
     document.head.appendChild(link);
     document.documentElement.style.fontFamily = '"975Maru SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif';
+    // 根据系统设置自动切换深色模式
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let theme = localStorage.getItem('theme');
+    if (!theme) {
+        theme = prefersDark ? 'dark' : 'light';
+        document.cookie = `theme=${theme}; path=/; max-age=3600`;
+        localStorage.setItem('theme', theme);
+    }
+    document.documentElement.setAttribute('theme', theme);
+
+    // 按钮显示逻辑
+    const themeButton = document.querySelector('#dock-theme');
+    if (themeButton) {
+        if (theme === 'dark') {
+            themeButton.querySelector('#light-button').style.display = 'none';
+            themeButton.querySelector('#dark-button').style.display = 'flex';
+        } else {
+            themeButton.querySelector('#dark-button').style.display = 'none';
+            themeButton.querySelector('#light-button').style.display = 'flex';
+        }
+    }
 }
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
