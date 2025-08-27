@@ -7,20 +7,12 @@ window.onload = function () {
                 card.style.backgroundImage = `url(${randomImageUrl})`;
         });
     };
-    // 在 head 中插入字体样式表
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/npm/cn-fontsource-975-maru-sc-regular/font.css';
-    document.head.appendChild(link);
-    document.documentElement.style.fontFamily = '"975Maru SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif';
     // 根据系统设置自动切换深色模式
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     let theme = localStorage.getItem('theme');
-    if (!theme) {
         theme = prefersDark ? 'dark' : 'light';
         document.cookie = `theme=${theme}; path=/; max-age=3600`;
         localStorage.setItem('theme', theme);
-    }
     document.documentElement.setAttribute('theme', theme);
 
     // 按钮显示逻辑
@@ -38,6 +30,14 @@ window.onload = function () {
     const banner = document.querySelector('#banner');
     banner.style.backgroundImage = 'url("https://www.dmoe.cc/random.php?random=1")';
 }
+// 在 DOM 加载后插入字体样式表
+document.addEventListener('DOMContentLoaded', function () {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdn.jsdelivr.net/npm/cn-fontsource-975-maru-sc-regular/font.css';
+    document.head.appendChild(link);
+    document.documentElement.style.fontFamily = '"975Maru SC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif';
+});
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
     const newTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -149,7 +149,7 @@ document.addEventListener('scroll', function() {
         header.classList.remove('shown');
     }
 });
-// 图片懒加载，并用 /img/loading.png 占位
+/* // 图片懒加载，并用 /img/loading.png 占位
 document.addEventListener('DOMContentLoaded', function () {
     const images = document.querySelectorAll('img[data-src]');
     images.forEach(img => {
@@ -200,4 +200,4 @@ document.addEventListener('DOMContentLoaded', function () {
         // Fallback: 直接加载所有图片
         images.forEach(lazyLoad);
     }
-});
+}); */
