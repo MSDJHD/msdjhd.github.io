@@ -37,9 +37,6 @@ window.onload = function () {
     // 设置 #banner 的背景图片
     const banner = document.querySelector('#banner');
     banner.style.backgroundImage = 'url("https://www.dmoe.cc/random.php?random=1")';
-
-    // 在 body 的 css 中插入背景图片
-    document.body.style.backgroundImage = 'url("https://www.dmoe.cc/random.php")';
 }
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -150,5 +147,57 @@ document.addEventListener('scroll', function() {
         header.classList.add('shown');
     } else {
         header.classList.remove('shown');
+    }
+});
+// 图片懒加载，并用 /img/loading.png 占位
+document.addEventListener('DOMContentLoaded', function () {
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+        img.src = '/img/loading.png';
+    });
+
+    function lazyLoad(img) {
+        if (img.getAttribute('data-src')) {
+            img.src = img.getAttribute('data-src');
+            img.removeAttribute('data-src');
+        }
+    }
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    lazyLoad(entry.target);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '100px' });
+
+        images.forEach(img => observer.observe(img));
+
+        // 监听属性变化，处理js动态修改data-src的情况
+        const bodyObserver = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-src') {
+                    const img = mutation.target;
+                    if (img.tagName === 'IMG' && img.hasAttribute('data-src')) {
+                        observer.observe(img);
+                        img.src = '/img/loading.png';
+                    }
+                }
+                if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === 1 && node.tagName === 'IMG' && node.hasAttribute('data-src')) {
+                            observer.observe(node);
+                            node.src = '/img/loading.png';
+                        }
+                    });
+                }
+            });
+        });
+        bodyObserver.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['data-src'], childList: true });
+    } else {
+        // Fallback: 直接加载所有图片
+        images.forEach(lazyLoad);
     }
 });
