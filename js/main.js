@@ -9,7 +9,7 @@ function lazyLoadBg() {
         opacity: "0.9"
     };
 
-    const FALLBACK_IMAGE = '/img/banner.png';
+    const FALLBACK_IMAGE = '/img/loading.svg';
     const TIMEOUT_DURATION = 5000;
     const OBSERVER_OPTIONS = { rootMargin: "100px" };
 

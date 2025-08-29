@@ -29,6 +29,33 @@
       </categories>
   </entry>
   <entry>
+    <title>2025-8-25-log</title>
+    <url>/2025-8-25-log/</url>
+    <content><![CDATA[<h1 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h1><ul>
+<li><p>更改了博客样式</p>
+</li>
+<li><p>改善了博客加载速度</p>
+</li>
+<li><p>正在考虑迁移博客&amp;新的博文方向</p>
+</li>
+</ul>
+<h1 id="画饼"><a href="#画饼" class="headerlink" title="画饼"></a>画饼</h1><ul>
+<li><p>[ ] 开源&amp;优化主题</p>
+</li>
+<li><p>[ ] 将博客迁出Github Pages且长期使用顶级域名</p>
+</li>
+<li><p>[ ] 写点博文</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2025-4-04-log</title>
     <url>/2025-4-04-log/</url>
     <content><![CDATA[<h1 id="近期情形"><a href="#近期情形" class="headerlink" title="近期情形"></a>近期情形</h1><ul>
@@ -93,6 +120,31 @@
 <li><p>改善性能</p>
 </li>
 </ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>图片测试</title>
+    <url>/img-test/</url>
+    <content><![CDATA[<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+
+<p>丢一张图片 (っ °Д °;)っ</p>
 ]]></content>
   </entry>
   <entry>
@@ -214,58 +266,6 @@
         <tag>教程</tag>
         <tag>经验</tag>
         <tag>技术</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图片测试</title>
-    <url>/img-test/</url>
-    <content><![CDATA[<div>
-    <img src="../img/banner.png" data-title="Cialo~"></img>
-</div>
-<div>
-    <img src="../img/banner.png" data-title="Cialo~"></img>
-</div>
-<div>
-    <img src="../img/banner.png" data-title="Cialo~"></img>
-</div>
-<div>
-    <img src="../img/banner.png" data-title="Cialo~"></img>
-</div>
-<div>
-    <img src="../img/banner.png" data-title="Cialo~"></img>
-</div>
-<div>
-    <img src="../img/banner.png" data-title="Cialo~"></img>
-</div>
-
-<p>丢一张图片 (っ °Д °;)っ</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>2025-8-25-log</title>
-    <url>/2025-8-25-log/</url>
-    <content><![CDATA[<h1 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h1><ul>
-<li><p>更改了博客样式</p>
-</li>
-<li><p>改善了博客加载速度</p>
-</li>
-<li><p>正在考虑迁移博客&amp;新的博文方向</p>
-</li>
-</ul>
-<h1 id="画饼"><a href="#画饼" class="headerlink" title="画饼"></a>画饼</h1><ul>
-<li><p>[ ] 开源&amp;优化主题</p>
-</li>
-<li><p>[ ] 将博客迁出Github Pages且长期使用顶级域名</p>
-</li>
-<li><p>[ ] 写点博文</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>日志</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
       </tags>
   </entry>
 </search>
