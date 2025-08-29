@@ -48,30 +48,26 @@
 ]]></content>
   </entry>
   <entry>
-    <title>2025-8-25-log</title>
-    <url>/2025-8-25-log/</url>
-    <content><![CDATA[<h1 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h1><ul>
-<li><p>更改了博客样式</p>
-</li>
-<li><p>改善了博客加载速度</p>
-</li>
-<li><p>正在考虑迁移博客&amp;新的博文方向</p>
-</li>
+    <title>Hello,World!</title>
+    <url>/Hello-World/</url>
+    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
+<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
+</blockquote>
+<p>在查阅</p>
+<ul>
+<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
+<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
 </ul>
-<h1 id="画饼"><a href="#画饼" class="headerlink" title="画饼"></a>画饼</h1><ul>
-<li><p>[ ] 开源&amp;优化主题</p>
-</li>
-<li><p>[ ] 将博客迁出Github Pages且长期使用顶级域名</p>
-</li>
-<li><p>[ ] 写点博文</p>
-</li>
-</ul>
+<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
+<hr>
+<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
 ]]></content>
       <categories>
-        <category>日志</category>
+        <category>杂物</category>
       </categories>
       <tags>
-        <tag>日志</tag>
+        <tag>日志,杂物</tag>
       </tags>
   </entry>
   <entry>
@@ -98,29 +94,6 @@
 </li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Hello,World!</title>
-    <url>/Hello-World/</url>
-    <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
-<p>你已成功安装<del>Typecho</del> <del>WordPress</del> Hexo，开始捣鼓吧！（bushi</p>
-</blockquote>
-<p>在查阅</p>
-<ul>
-<li><a href="https://butterfly.js.org/">Butterfly - A Simple and Card UI Design theme for Hexo</a></li>
-<li><a href="https://blog.csdn.net/yaorongke/article/details/119089190">GitHub Pages + Hexo搭建个人博客网站，史上最全教程_hexo博客-CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/weixin_46686999/article/details/105184794">windows搭建Hexo—超详细_hexo windows-CSDN博客</a></li>
-</ul>
-<p>后，本站横空出世<del>（从石头缝里蹦出来了）</del></p>
-<hr>
-<p>本站使用 <a href="https://butterfly.js.org/">butterfly</a> 主题，<a href="https://hexo.io/zh-cn/">Hexo</a> 为博客框架，感谢其开发者作出的贡献。</p>
-]]></content>
-      <categories>
-        <category>杂物</category>
-      </categories>
-      <tags>
-        <tag>日志,杂物</tag>
-      </tags>
   </entry>
   <entry>
     <title>使用Github Pages与Hexo搭建个人博客</title>
@@ -267,5 +240,32 @@
 
 <p>丢一张图片 (っ °Д °;)っ</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>2025-8-25-log</title>
+    <url>/2025-8-25-log/</url>
+    <content><![CDATA[<h1 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h1><ul>
+<li><p>更改了博客样式</p>
+</li>
+<li><p>改善了博客加载速度</p>
+</li>
+<li><p>正在考虑迁移博客&amp;新的博文方向</p>
+</li>
+</ul>
+<h1 id="画饼"><a href="#画饼" class="headerlink" title="画饼"></a>画饼</h1><ul>
+<li><p>[ ] 开源&amp;优化主题</p>
+</li>
+<li><p>[ ] 将博客迁出Github Pages且长期使用顶级域名</p>
+</li>
+<li><p>[ ] 写点博文</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>日志</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
   </entry>
 </search>

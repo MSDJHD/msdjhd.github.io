@@ -149,6 +149,17 @@ class Lightbox {
         this.image.addEventListener('load', () => {
             this.resetTransform();
         });
+        
+        // 添加PJAX事件监听
+        document.addEventListener('pjax:start', () => {
+            if (this.isOpen) {
+                this.close();
+            }
+        });
+        
+        document.addEventListener('pjax:end', () => {
+            this.collectImages();
+        });
     }
 
     open(index = 0) {
@@ -369,9 +380,34 @@ class Lightbox {
             this.hideUI();
         }, this.autoHideDelay);
     }
+    
+    // 销毁灯箱实例的方法
+    destroy() {
+        if (this.lightbox && this.lightbox.parentNode) {
+            this.lightbox.parentNode.removeChild(this.lightbox);
+        }
+        if (this.autoHideTimeout) {
+            clearTimeout(this.autoHideTimeout);
+        }
+    }
 }
 
 // 初始化灯箱
 document.addEventListener('DOMContentLoaded', () => {
     window.lightbox = new Lightbox();
+});
+
+// 添加PJAX兼容性支持
+document.addEventListener('pjax:send', () => {
+    if (window.lightbox && window.lightbox.isOpen) {
+        window.lightbox.close();
+    }
+});
+
+document.addEventListener('pjax:complete', () => {
+    if (window.lightbox) {
+        window.lightbox.collectImages();
+    } else {
+        window.lightbox = new Lightbox();
+    }
 });
