@@ -75,6 +75,31 @@
       </tags>
   </entry>
   <entry>
+    <title>2025-8-30-log</title>
+    <url>/2025-8-30-log/</url>
+    <content><![CDATA[<h1 id="之前画的饼"><a href="#之前画的饼" class="headerlink" title="之前画的饼"></a>之前画的饼</h1><ul>
+<li><p>[ ] 开源&amp;优化主题</p>
+</li>
+<li><p>[ ] 将博客迁出Github Pages且长期使用顶级域名</p>
+</li>
+<li><p>[ ] 写点博文</p>
+</li>
+</ul>
+<h1 id="近况"><a href="#近况" class="headerlink" title="近况"></a>近况</h1><ul>
+<li><p>添加图片懒加载&amp;灯箱</p>
+</li>
+<li><p>添加主页遍历文章分页</p>
+</li>
+<li><p>添加主页文章发布时间&amp;分类</p>
+</li>
+<li><p>优化样式</p>
+</li>
+<li><p>改善性能</p>
+</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello,World!</title>
     <url>/Hello-World/</url>
     <content><![CDATA[<h1 id="你好，世界！"><a href="#你好，世界！" class="headerlink" title="你好，世界！"></a><strong>你好，世界！</strong></h1><blockquote>
@@ -217,5 +242,30 @@
         <tag>经验</tag>
         <tag>技术</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>图片测试</title>
+    <url>/img-test/</url>
+    <content><![CDATA[<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+<div>
+    <img src="../img/banner.png" data-title="Cialo~"></img>
+</div>
+
+<p>丢一张图片 (っ °Д °;)っ</p>
+]]></content>
   </entry>
 </search>
