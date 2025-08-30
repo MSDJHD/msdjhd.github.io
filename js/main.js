@@ -102,6 +102,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // 延迟加载背景图，避免阻塞页面渲染
     lazyLoadBg();
+    // 为#main中的所有img外包一层a标签，href即为src
+    const main = document.querySelector('#main');
+    if (main) {
+        const images = main.querySelectorAll('img');
+        images.forEach(img => {
+            // 检查img是否已经包裹了a标签
+            if (img.parentElement.tagName !== 'A') {
+                const link = document.createElement('a');
+                link.href = img.src;
+                link.setAttribute('data-caption', img.alt || '');
+                img.parentNode.insertBefore(link, img);
+                link.appendChild(img);
+            }
+        });
+    }
+    baguetteBox.run('#main', {
+                // Custom options
+                async: true,
+                captions: function (element) {
+                    return element.getElementsByTagName('img')[0].alt;
+                },
+                animation: 'fadeIn',
+                noScrollbars: true
+            });
 });
 function themeSwitch() {
     const currentTheme = localStorage.getItem('theme') || 'light';
