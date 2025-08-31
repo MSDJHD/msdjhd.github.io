@@ -8,7 +8,7 @@
                 themeButton.querySelector('#light-button').style.display = 'none';
                 themeButton.querySelector('#dark-button').style.display = 'flex';
             }
-        });</script><a onclick="scrollToComment()" id="sidebar-comment"><div class="button sidebar-button"><i class="bi bi-chat-left-text-fill"></i></div></a><a href="https://msdjhd.github.io/" id="sidebar-home" target="_self"><div class="button sidebar-button"><i class="bi bi-house-fill"></i></div></a><a onclick="toc()" id="sidebar-toc"><div class="button sidebar-button"><i class="bi bi-body-text"></i></div></a></div></div><div id="banner" class="post-banner" style="background-image:url(https://www.dmoe.cc/random.php?random=1)"><h1>2025-4-04-log</h1></div><div id="main"><div id="article" class="card"><span><h1>2025-4-04-log</h1></span><hr><h1 id="近期情形"><a href="#近期情形" class="headerlink" title="近期情形"></a>近期情形</h1><ul><li><p>博客主题更换为ABST(什么万年老坑+屎山)</p></li><li><p>学业上稍有困难…</p></li></ul><h1 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h1><ul><li><p>节假日抽时间完善主题</p></li><li><p>主题完善后开源</p></li><li><p>冲刺(各种方面上的)</p></li></ul><hr></div><div id="comment" class="card"><h1>评论</h1><div id="utteranc-container"></div><head><script src="https://utteranc.es/client.js" repo="MSDJHD/msdjhd.github.io" issue-term="pathname" label="comment" theme="preferred-color-scheme" crossorigin="anonymous" loading="lazy" load="ansync" defer></script></head></div></div><div id="toc"><a></a></div></div></body><footer><div id="footer"><span>© 2025 MSDJHDの日志.<br>感谢<a href="https://www.dmoe.cc/" target="_blank" rel="noopener noreferrer">www.dmoe.cc</a>, <a href="https://t.alcy.cc/" target="_blank" rel="noopener noreferrer">t.alcy.cc</a>提供图片api支持.<br>感谢<a href="https://cdnjs.com/" target="_blank" rel="noopener noreferrer">cdnjs</a>提供静态资源cdn.<br>评论系统由<a href="https://utteranc.es/" target="_blank" rel="noopener noreferrer">utteranc.es</a>提供.<br>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer">Hexo</a>.</span><script>$(document).pjax('a[href^=' + '"https://msdjhd.github.io"' + ']:not(a[target="_blank"], a[no-pjax])', {
+        });</script><a onclick="scrollToComment()" id="sidebar-comment"><div class="button sidebar-button"><i class="bi bi-chat-left-text-fill"></i></div></a><a href="https://msdjhd.github.io/" id="sidebar-home" target="_self"><div class="button sidebar-button"><i class="bi bi-house-fill"></i></div></a><a onclick="toc()" id="sidebar-toc"><div class="button sidebar-button"><i class="bi bi-body-text"></i></div></a></div></div><div id="banner" class="post-banner lazy-bg" data-bg="https://www.dmoe.cc/random.php?random=1"><h1>2025-4-04-log</h1></div><div id="main"><div id="article" class="card"><span><h1>2025-4-04-log</h1></span><hr><h1 id="近期情形"><a href="#近期情形" class="headerlink" title="近期情形"></a>近期情形</h1><ul><li><p>博客主题更换为ABST(什么万年老坑+屎山)</p></li><li><p>学业上稍有困难…</p></li></ul><h1 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h1><ul><li><p>节假日抽时间完善主题</p></li><li><p>主题完善后开源</p></li><li><p>冲刺(各种方面上的)</p></li></ul><hr></div><div id="comment" class="card"><h1>评论</h1><div id="utteranc-container"><head><script src="https://utteranc.es/client.js" repo="MSDJHD/msdjhd.github.io" issue-term="pathname" label="comment" theme="preferred-color-scheme" crossorigin="anonymous" loading="lazy" load="ansync" defer></script></head></div></div></div><div id="toc"><a></a></div></div></body><footer><div id="footer"><span>© 2025 MSDJHDの日志.<br>感谢<a href="https://www.dmoe.cc/" target="_blank" rel="noopener noreferrer">www.dmoe.cc</a>, <a href="https://t.alcy.cc/" target="_blank" rel="noopener noreferrer">t.alcy.cc</a>提供图片api支持.<br>感谢<a href="https://cdnjs.com/" target="_blank" rel="noopener noreferrer">cdnjs</a>提供静态资源cdn.<br>评论系统由<a href="https://utteranc.es/" target="_blank" rel="noopener noreferrer">utteranc.es</a>提供.<br>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener noreferrer">Hexo</a>.</span><script>$(document).pjax('a[href^=' + '"https://msdjhd.github.io"' + ']:not(a[target="_blank"], a[no-pjax])', {
             container: '#pjax',//DIV容器的ID
             fragment: '#pjax',//作为整个pjax框架，必须写上
             timeout: 8000 //超时就会被迫页面就会完全刷新，单位毫秒
@@ -17,19 +17,9 @@
         $(document).on('pjax:end', function () { 
             NProgress.done(); 
             const isHomePage = location.pathname === '/' || location.pathname === '/index.html';
-            if (!isHomePage && !document.querySelector('.utterances')) {
-                const script = document.createElement('script');
-                script.src = 'https://utteranc.es/client.js';
-                script.repo = 'MSDJHD/msdjhd.github.io';
-                script.setAttribute('issue-term', 'pathname');
-                script.setAttribute('label', 'comment');
-                script.setAttribute('theme', 'preferred-color-scheme');
-                script.crossOrigin = 'anonymous';
-                script.async = true;
-                script.defer = true;
-                document.querySelector('#comments')?.appendChild(script);
-            };
+
             lazyLoadBg();
+            lazyLoadImages();
             // 为#main中的所有img外包一层a标签，href即为src
             const main = document.querySelector('#main');
             if (main) {
@@ -45,6 +35,26 @@
                     }
                 });
             };
+            
+            // 重新加载utteranc.es评论系统
+            const utterancesContainer = document.querySelector('#utteranc-container');
+            if (utterancesContainer) {
+                // 清空容器
+                utterancesContainer.innerHTML = '';
+                // 创建新的utterances脚本
+                const script = document.createElement('script');
+                script.src = 'https://utteranc.es/client.js';
+                script.setAttribute('repo', 'MSDJHD/msdjhd.github.io');
+                script.setAttribute('issue-term', 'pathname');
+                script.setAttribute('label', 'comment');
+                script.setAttribute('theme', 'preferred-color-scheme');
+                script.setAttribute('crossorigin', 'anonymous');
+                script.setAttribute('loading', 'lazy');
+                script.setAttribute('load', 'ansync');
+                script.setAttribute('defer', '');
+                utterancesContainer.appendChild(script);
+            }
+            
             baguetteBox.run('#main', {
                 // Custom options
                 async: true,

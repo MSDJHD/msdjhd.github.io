@@ -2,11 +2,6 @@ function lazyLoadBg() {
     const lazyElements = document.querySelectorAll(".lazy-bg");
     const PLACEHOLDER_STYLE = {
         backgroundImage: 'url("/img/loading.svg")',
-        opacity: "0.5"
-    };
-
-    const LOADED_STYLE = {
-        opacity: "0.9"
     };
 
     const FALLBACK_IMAGE = '/img/loadFailed.svg';
@@ -44,7 +39,7 @@ function lazyLoadBg() {
                 const timer = setTimeout(() => {
                     if (!isImageLoaded) {
                         isImageLoaded = true;
-                        setElementStyle(element, `url(${FALLBACK_IMAGE})`, LOADED_STYLE.opacity);
+                        setElementStyle(element, `url(${FALLBACK_IMAGE})`);
                         observer.unobserve(element);
                         elementTimers.delete(element); // 清除引用
                     }
@@ -58,7 +53,7 @@ function lazyLoadBg() {
                         isImageLoaded = true;
                         clearTimeout(timer);
                         elementTimers.delete(element); // 清除引用
-                        setElementStyle(element, `url(${bgImage})`, LOADED_STYLE.opacity);
+                        setElementStyle(element, `url(${bgImage})`);
                         observer.unobserve(element);
                     }
                 };
@@ -68,7 +63,7 @@ function lazyLoadBg() {
                         clearTimeout(timer);
                         elementTimers.delete(element); // 清除引用
                         console.warn(`图片加载失败: ${bgImage}，使用替补图片`);
-                        setElementStyle(element, `url(${FALLBACK_IMAGE})`, LOADED_STYLE.opacity);
+                        setElementStyle(element, `url(${FALLBACK_IMAGE})`);
                         observer.unobserve(element);
                     }
                 };
@@ -79,6 +74,76 @@ function lazyLoadBg() {
 
     lazyElements.forEach((el) => observer.observe(el));
 }
+function lazyLoadImages() {
+    const lazyImages = document.querySelectorAll(".lazy-img");
+    const PLACEHOLDER_IMAGE = "/img/loading.svg";
+    const FALLBACK_IMAGE = '/img/loadFailed.svg';
+    const TIMEOUT_DURATION = 5000;
+    const OBSERVER_OPTIONS = { rootMargin: "50px" };
+
+    // 用于存储每个元素的定时器，防止内存泄漏
+    const imageTimers = new Map();
+
+    // 设置占位图
+    lazyImages.forEach((img) => {
+        img.src = PLACEHOLDER_IMAGE;
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const imgSrc = img.dataset.src;
+
+                // 检查 data-src 属性是否存在
+                if (!imgSrc) {
+                    observer.unobserve(img);
+                    return;
+                }
+
+                let isImageLoaded = false;
+
+                // 添加超时处理
+                const timer = setTimeout(() => {
+                    if (!isImageLoaded) {
+                        isImageLoaded = true;
+                        img.src = FALLBACK_IMAGE;
+                        observer.unobserve(img);
+                        imageTimers.delete(img); // 清除引用
+                    }
+                }, TIMEOUT_DURATION);
+
+                imageTimers.set(img, timer); // 存储定时器引用
+
+                const imageLoader = new Image();
+                imageLoader.onload = () => {
+                    if (!isImageLoaded) {
+                        isImageLoaded = true;
+                        clearTimeout(timer);
+                        imageTimers.delete(img); // 清除引用
+                        img.src = imgSrc;
+                        observer.unobserve(img);
+                    }
+                };
+                imageLoader.onerror = () => {
+                    if (!isImageLoaded) {
+                        isImageLoaded = true;
+                        clearTimeout(timer);
+                        imageTimers.delete(img); // 清除引用
+                        console.warn(`图片加载失败: ${imgSrc}，使用替补图片`);
+                        img.src = FALLBACK_IMAGE;
+                        observer.unobserve(img);
+                    }
+                };
+                imageLoader.src = imgSrc;
+            }
+        });
+    }, OBSERVER_OPTIONS);
+
+    lazyImages.forEach((img) => observer.observe(img));
+}
+
+// ... existing code ...
 // 避免阻塞页面渲染，使用 DOMContentLoaded 替代 window.onload
 document.addEventListener('DOMContentLoaded', function () {
     // 根据系统设置自动切换深色模式
@@ -102,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // 延迟加载背景图，避免阻塞页面渲染
     lazyLoadBg();
+    lazyLoadImages();
     // 为#main中的所有img外包一层a标签，href即为src
     const main = document.querySelector('#main');
     if (main) {
