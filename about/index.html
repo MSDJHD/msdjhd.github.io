@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="language" content="zh-CN">
+<meta name="description" content="这是一个中文博客。">
+<title>about | MSDJHDの日志</title>
+<link rel="alternate" href="https://msdjhd.github.io" hreflang="zh-CN">
+<link rel="icon" href="https://msdjhd.github.io/favicon.ico">
+<link rel="stylesheet" href="https://msdjhd.github.io/css/style.css">
+<script src="https://msdjhd.github.io/js/main.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+<link href="https://fontsapi.zeoseven.com/292/main/result.css" onload="this.rel='stylesheet'" rel="preload" as="style" crossorigin />
+<noscript><link rel="stylesheet" href="https://fontsapi.zeoseven.com/292/main/result.css" /></noscript>
+<style>
+    body {
+        font-family: "LXGW WenKai";
+        font-weight: normal;
+    }
+</style>
+<meta name="generator" content="Hexo 8.1.1"></head>
+<header>
+    <h1>MSDJHDの日志</h1>
+<nav>
+    <ul id="menu">
+        <li class="menu-item">
+            <a href="https://msdjhd.github.io/" class="menu-item-link pjax" target="_self">Home<i class="fa-solid fa-home"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://msdjhd.github.io/about/index.html" class="menu-item-link pjax" target="_self">About<i class="fa-solid fa-circle-info"></i></a>
+        </li>
+    </ul>
+</nav>
+</header>
+<body>
+    <div id="banner" class="lazy-bg" data-bg="https://www.dmoe.cc/random.php?random=1">
+        <div id="banner-info">
+            <img data-src="/img/logo-256.png" class="avatar lazy-img" />
+            <h1>MSDJHDの日志</h1>
+        </div>
+    </div>
+    <div id="main">
+        <br />
+<h1>about</h1>
+<span class="post-card-date"><i class="fa-solid fa-calendar"></i>2026-05-28</span>
+<hr />
+<h1 id="关于MSDJHD"><a href="#关于MSDJHD" class="headerlink" title="关于MSDJHD"></a>关于MSDJHD</h1><p>在校高中生，编程作为兴趣正在学习，且仍需多多改进。<br>如果你想的话，可以称呼我为“米酥”。</p>
+<p><strong>主要工作栈</strong></p>
+<ul>
+<li>HTML+CSS+JS</li>
+<li>Python (在学)</li>
+</ul>
+<p><strong>主要项目</strong></p>
+<ul>
+<li>此博客</li>
+<li>此博客所套用的主题</li>
+<li>Typecho ABST主题 (已弃坑)</li>
+</ul>
+<h1 id="关于MSDJHDの日志"><a href="#关于MSDJHDの日志" class="headerlink" title="关于MSDJHDの日志"></a>关于MSDJHDの日志</h1><p>前身为MSDJHDBLOG，2022年中建立<br>本站建立于2024年中，是我的小博客，随手写点小垃圾。</p>
+<p><em>由于主攻学业，此博客并不会频繁更新。</em></p>
+
+    </div>
+</body>
+<footer>
+    <div id="footer"><span>© 2025 MSDJHDの日志.<br>Powered by <a href="https://hexo.io/" target="_blank"
+                rel="noopener noreferrer">Hexo</a>.</span>
+</footer>
+<div id="sidebar">
+    <button id="back-to-top" onclick="scrollToTop()" class="sidebar-button"><i class="fa-solid fa-arrow-up"></i></button>
+    <button id="settings" onclick="toggleSettings()" class="sidebar-button"><i class="fa-solid fa-gear"></i></button>
+    <div id="settings-panel">
+        <div class="setting-item" id="sidebar-theme-toggle">
+            <button id="dark-button" onclick="toggleDarkMode()"><i class="fa-solid fa-sun"></i></button>
+            <button id="light-button" onclick="toggleDarkMode()"><i class="fa-solid fa-moon"></i></button>
+        </div>
+        <div class="setting-item button">
+            <i class="fa-solid fa-text-height"></i>
+            <input type="range" id="font-size" min="12" max="24" value="18" step="1" oninput="changeFontSize(this.value)">
+        </div>
+    </div>
+</div>
+<script>
+    const pjax = new Pjax({
+        selectors: [
+            "title",
+            "meta[name=description]",
+            "#main",
+            "#banner",
+        ],
+        elements: "a",
+    })
+    function mainOnLoad () {
+        let main = document.querySelector('#main');
+        main.classList.add('onLoad');
+    }
+    function mainEndLoad () {
+        let main = document.querySelector('#main');
+        main.classList.remove('onLoad');
+        lazyLoadImages();
+        lazyLoadBg();
+    }
+    document.addEventListener('pjax:send', mainOnLoad)
+    document.addEventListener('pjax:complete', mainEndLoad)
+</script>

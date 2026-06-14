@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="language" content="zh-CN">
+<meta name="description" content="这是一个中文博客。">
+<title>MSDJHDの日志</title>
+<link rel="alternate" href="https://msdjhd.github.io" hreflang="zh-CN">
+<link rel="icon" href="https://msdjhd.github.io/favicon.ico">
+<link rel="stylesheet" href="https://msdjhd.github.io/css/style.css">
+<script src="https://msdjhd.github.io/js/main.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/pjax/0.2.8/pjax.min.js"></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+<link href="https://fontsapi.zeoseven.com/292/main/result.css" onload="this.rel='stylesheet'" rel="preload" as="style" crossorigin />
+<noscript><link rel="stylesheet" href="https://fontsapi.zeoseven.com/292/main/result.css" /></noscript>
+<style>
+    body {
+        font-family: "LXGW WenKai";
+        font-weight: normal;
+    }
+</style>
+<meta name="generator" content="Hexo 8.1.1"></head>
+<header>
+    <h1>MSDJHDの日志</h1>
+<nav>
+    <ul id="menu">
+        <li class="menu-item">
+            <a href="https://msdjhd.github.io/" class="menu-item-link pjax" target="_self">Home<i class="fa-solid fa-home"></i></a>
+        </li>
+        <li class="menu-item">
+            <a href="https://msdjhd.github.io/about/index.html" class="menu-item-link pjax" target="_self">About<i class="fa-solid fa-circle-info"></i></a>
+        </li>
+    </ul>
+</nav>
+</header>
+<body>
+    <div id="banner" class="lazy-bg" data-bg="https://www.dmoe.cc/random.php?random=1">
+        <div id="banner-info">
+            <img data-src="/img/logo-256.png" class="avatar lazy-img" />
+            <h1>MSDJHDの日志</h1>
+        </div>
+    </div>
+    <div id="main">
+        <div id="post-list" class="card">
+
+    <div class="post-card card">
+      <a href="https://msdjhd.github.io/2026/03/29/zxsg1/">
+        <img data-src="https://t.alcy.cc/moe?random=0.6206746068347784" class="post-card-image lazy-img" />
+        <div class="post-card-information">
+          <h2>在校随感 Ⅰ</h2>
+          <p></p>
+          
+            <span class="post-card-tag"></span>
+          
+          
+            <span class="post-card-category"></span>
+          
+            <span class="post-card-category"></span>
+          
+        </div>
+      </a>
+    </div>
+
+    <div class="post-card card">
+      <a href="https://msdjhd.github.io/2026/03/27/zxsg3/">
+        <img data-src="https://t.alcy.cc/moe?random=0.8090104889076513" class="post-card-image lazy-img" />
+        <div class="post-card-information">
+          <h2>在校随感 Ⅲ</h2>
+          <p></p>
+          
+            <span class="post-card-tag"></span>
+          
+          
+            <span class="post-card-category"></span>
+          
+            <span class="post-card-category"></span>
+          
+        </div>
+      </a>
+    </div>
+
+    <div class="post-card card">
+      <a href="https://msdjhd.github.io/2026/03/23/zxsg2/">
+        <img data-src="https://t.alcy.cc/moe?random=0.4895954340058837" class="post-card-image lazy-img" />
+        <div class="post-card-information">
+          <h2>在校随感 Ⅱ</h2>
+          <p></p>
+          
+            <span class="post-card-tag"></span>
+          
+          
+            <span class="post-card-category"></span>
+          
+            <span class="post-card-category"></span>
+          
+        </div>
+      </a>
+    </div>
+
+</div>
+    </div>
+</body>
+<footer>
+    <div id="footer"><span>© 2025 MSDJHDの日志.<br>Powered by <a href="https://hexo.io/" target="_blank"
+                rel="noopener noreferrer">Hexo</a>.</span>
+</footer>
+<div id="sidebar">
+    <button id="back-to-top" onclick="scrollToTop()" class="sidebar-button"><i class="fa-solid fa-arrow-up"></i></button>
+    <button id="settings" onclick="toggleSettings()" class="sidebar-button"><i class="fa-solid fa-gear"></i></button>
+    <div id="settings-panel">
+        <div class="setting-item" id="sidebar-theme-toggle">
+            <button id="dark-button" onclick="toggleDarkMode()"><i class="fa-solid fa-sun"></i></button>
+            <button id="light-button" onclick="toggleDarkMode()"><i class="fa-solid fa-moon"></i></button>
+        </div>
+        <div class="setting-item button">
+            <i class="fa-solid fa-text-height"></i>
+            <input type="range" id="font-size" min="12" max="24" value="18" step="1" oninput="changeFontSize(this.value)">
+        </div>
+    </div>
+</div>
+<script>
+    const pjax = new Pjax({
+        selectors: [
+            "title",
+            "meta[name=description]",
+            "#main",
+            "#banner",
+        ],
+        elements: "a",
+    })
+    function mainOnLoad () {
+        let main = document.querySelector('#main');
+        main.classList.add('onLoad');
+    }
+    function mainEndLoad () {
+        let main = document.querySelector('#main');
+        main.classList.remove('onLoad');
+        lazyLoadImages();
+        lazyLoadBg();
+    }
+    document.addEventListener('pjax:send', mainOnLoad)
+    document.addEventListener('pjax:complete', mainEndLoad)
+</script>
